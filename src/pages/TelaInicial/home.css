@@ -1,0 +1,409 @@
+/* Reset e estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Container principal */
+.home-container {
+  min-height: 100vh;
+  background-color: #E8F5E9;
+  width: 100%;
+}
+
+/* Header/Navbar */
+.header {
+  background-color: #217333;
+  color: white;
+  width: 100%;
+}
+
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  width: 100%;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.ifce-logo {
+  height: 150px;
+  width: auto;
+  object-fit: contain;
+}
+
+.title-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.ifce-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.campus-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.questionario-btn {
+  background-color: #217333;
+  color: white;
+  border: 2px solid white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.questionario-btn:hover {
+  background-color: white;
+  color: #217333;
+}
+
+/* Sub-header */
+.header-sub {
+  background-color: #1A5C29;
+  padding: 0.75rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.portal-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* Container principal */
+.main-container {
+  padding: 2rem;
+  width: 100%;
+}
+
+/* Grid de conteúdo */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Seção da imagem */
+.image-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.image-container {
+  width: 100%;
+  max-width: 380px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  color: #555;
+  font-style: italic;
+  align-items: center;
+  justify-content: center;
+}
+
+.aluno-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Conteúdo principal */
+.main-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: fit-content;
+  margin-top: 3rem;
+}
+
+.content-title {
+  color: #217333;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.content-text {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Seção inferior */
+.bottom-section {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+.importance-title {
+  color: #217333;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.importance-text {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 4rem;
+  margin-right: 0;
+}
+
+.cta-section {
+  text-align: left;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: 4rem;
+  margin-right: 0;
+}
+
+.cta-text {
+  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.responder-btn {
+  background-color: #217333;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.responder-btn:hover {
+  background-color: #1A5C29;
+}
+
+/* Footer */
+.footer {
+  background-color: #1A5C29;
+  color: white;
+  padding: 3rem 2rem;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  position: relative;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%);
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+}
+
+.footer-address p {
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.footer-contact {
+  margin-bottom: 2rem;
+}
+
+.footer-contact:last-child {
+  margin-bottom: 0;
+}
+
+.footer-contact p {
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .header-main {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .header-left {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .ifce-logo {
+    height: 120px;
+  }
+  
+  .ifce-title {
+    font-size: 2rem;
+  }
+  
+  .image-container {
+    max-width: 280px;
+    height: 280px;
+  }
+  
+  .main-container {
+    padding: 1rem;
+  }
+  
+  .main-content,
+  .bottom-section {
+    padding: 1.5rem;
+  }
+  
+  .main-content {
+    margin-top: 2.5rem;
+  }
+  
+  .bottom-section {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+  
+  .importance-text,
+  .cta-section {
+    max-width: 100%;
+    margin-left: 2rem;
+    margin-right: 0;
+  }
+  
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-main {
+    padding: 1rem;
+  }
+  
+  .ifce-title {
+    font-size: 1.8rem;
+  }
+  
+  .image-container {
+    max-width: 240px;
+    height: 240px;
+  }
+  
+  .content-title,
+  .importance-title {
+    font-size: 1.5rem;
+  }
+  
+  .main-content {
+    margin-top: 2rem;
+  }
+  
+  .importance-text,
+  .cta-section {
+    max-width: 100%;
+  }
+  
+  .footer {
+    padding: 1.5rem 1rem;
+  }
+  
+  .footer-title {
+    font-size: 1.2rem;
+  }
+
+  
+}
