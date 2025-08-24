@@ -6,6 +6,7 @@ const Formulario = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [formData, setFormData] = useState({
     // Dados Pessoais
+    nome: '',
     email: '',
     genero: '',
     etnia: '',
@@ -97,6 +98,19 @@ const Formulario = () => {
           <>
             <h2 className="page-title">Dados Pessoais</h2>
             <div className="form-group">
+              <label htmlFor="nomeCompleto" className="form-label">Nome completo</label>
+              <input
+              type="text"
+              id="nomeCompleto"
+              name="nomeCompleto"
+              value={formData.nomeCompleto}
+              className="form-input"
+              onChange={handleInputChange}
+              placeholder="Digite seu nome completo"
+              required
+            />
+            </div>
+            <div className="form-group">
               <label htmlFor="email" className="form-label">E-mail principal</label>
               <input
                 type="email"
@@ -112,7 +126,6 @@ const Formulario = () => {
             <div className="form-group">
               <label htmlFor="genero" className="form-label">
                 Qual sua identidade de gênero?
-                <span className="help-icon">ⓘ</span>
               </label>
               <select
                 id="genero"
