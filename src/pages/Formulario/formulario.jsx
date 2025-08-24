@@ -72,12 +72,14 @@ const Formulario = () => {
   const handleNext = () => {
     if (currentPage < 7) {
       setCurrentPage(currentPage + 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
   const handlePrevious = () => {
     if (currentPage > 0) {
       setCurrentPage(currentPage - 1);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
