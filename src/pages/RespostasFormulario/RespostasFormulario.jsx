@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ifceLogo from '../../assets/ifce-logo.png';
 import './respostasFormulario.css';
 
 const RespostasFormulario = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   
   // Dados mockados para demonstração
@@ -11,45 +13,43 @@ const RespostasFormulario = () => {
       id: 1,
       nome: "Yan Uchoa Da Silva",
       curso: "ADS",
-      email: "yan@gmail.com",
-      anoTermino: "2025"
+      email: "yan@gmail.com"
     },
     {
       id: 2,
       nome: "Maria Silva Santos",
       curso: "Sistemas de Informação",
-      email: "maria.silva@email.com",
-      anoTermino: "2024"
+      email: "maria.silva@email.com"
     },
     {
       id: 3,
       nome: "João Pedro Costa",
       curso: "ADS",
-      email: "joao.costa@email.com",
-      anoTermino: "2023"
+      email: "joao.costa@email.com"
     },
     {
       id: 4,
       nome: "Ana Beatriz Lima",
       curso: "Sistemas de Informação",
-      email: "ana.lima@email.com",
-      anoTermino: "2024"
+      email: "ana.lima@email.com"
     },
     {
       id: 5,
       nome: "Carlos Eduardo Rocha",
       curso: "ADS",
-      email: "carlos.rocha@email.com",
-      anoTermino: "2023"
+      email: "carlos.rocha@email.com"
     }
   ]);
 
   const filteredRespostas = respostas.filter(resposta =>
     resposta.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
     resposta.curso.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    resposta.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    resposta.anoTermino.includes(searchTerm)
+    resposta.email.toLowerCase().includes(searchTerm)
   );
+
+  const handleNomeClick = (id) => {
+    navigate(`/egresso/${id}`);
+  };
 
   return (
     <div className="respostas-container">
@@ -97,16 +97,21 @@ const RespostasFormulario = () => {
                   <th className="th-nome">Nome</th>
                   <th className="th-curso">Curso</th>
                   <th className="th-email">E-mail</th>
-                  <th className="th-ano">Ano término</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredRespostas.map((resposta) => (
                   <tr key={resposta.id} className="table-row">
-                    <td className="td-nome">{resposta.nome}</td>
+                    <td className="td-nome">
+                      <button 
+                        className="nome-link"
+                        onClick={() => handleNomeClick(resposta.id)}
+                      >
+                        {resposta.nome}
+                      </button>
+                    </td>
                     <td className="td-curso">{resposta.curso}</td>
                     <td className="td-email">{resposta.email}</td>
-                    <td className="td-ano">{resposta.anoTermino}</td>
                   </tr>
                 ))}
               </tbody>

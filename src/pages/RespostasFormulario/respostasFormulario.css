@@ -167,6 +167,26 @@
   padding-right: 1rem;
 }
 
+.nome-link {
+  background: none;
+  border: none;
+  color: #217333;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  transition: color 0.2s ease;
+}
+
+.nome-link:hover {
+  color: #45a049;
+  text-decoration: none;
+}
+
 .th-curso, .td-curso {
   min-width: 150px;
   padding-left: 1rem;
@@ -175,13 +195,6 @@
 
 .th-email, .td-email {
   min-width: 250px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.th-ano, .td-ano {
-  min-width: 100px;
-  text-align: right;
   padding-left: 1rem;
   padding-right: 1rem;
 }

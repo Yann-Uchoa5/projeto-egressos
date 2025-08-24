@@ -5,6 +5,7 @@ import Login from "./pages/Login/Login";
 import TelaInicial from "./pages/TelaInicial/home";
 import Formulario from "./pages/Formulario/Formulario";
 import RespostasFormulario from "./pages/RespostasFormulario/RespostasFormulario";
+import DetalhesEgresso from "./pages/DetalhesEgresso/DetalhesEgresso";
 
 import "./App.css";
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/formulario" element={<Formulario />} />
           <Route path="/respostas" element={<RespostasFormulario />} />
+          <Route path="/egresso/:id" element={<DetalhesEgresso />} />
         </Routes>
       </div>
     </Router>

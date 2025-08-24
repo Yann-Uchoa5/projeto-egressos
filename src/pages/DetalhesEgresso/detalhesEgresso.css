@@ -1,0 +1,269 @@
+.detalhes-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Header com informações do egresso */
+.header-section {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.page-title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+}
+
+.egresso-basic-info h2 {
+  margin: 0 0 0.5rem 0;
+  color: #217333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.egresso-basic-info p {
+  color: #666;
+  margin: 0.25rem 0;
+  font-size: 1rem;
+}
+
+/* Seções de informações */
+.info-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid #e0e0e0;
+}
+
+.section-title {
+  color: #217333;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #217333;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.info-item.full-width {
+  grid-column: 1 / -1;
+}
+
+.info-item label {
+  color: #555;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-item span {
+  color: #333;
+  font-size: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  min-height: 2.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.info-item span.avaliacao {
+  font-weight: 500;
+  color: #217333;
+}
+
+/* Loading e Error */
+.loading, .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .content-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+  }
+  
+  .egresso-basic-info h2 {
+    font-size: 1.3rem;
+  }
+  
+  .info-section {
+    padding: 1rem;
+  }
+  
+  .section-title {
+    font-size: 1.2rem;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .info-item span {
+    min-height: 2rem;
+    font-size: 0.9rem;
+  }
+  
+  .coordenador-header {
+    padding: 1rem;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+  
+  .voltar-btn {
+    align-self: flex-start;
+  }
+  
+  .coordenador-info {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-wrapper {
+    padding: 1rem;
+  }
+  
+  .info-section {
+    padding: 0.75rem;
+  }
+  
+  .info-item span {
+    padding: 0.4rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Header verde com informações do coordenador */
+.coordenador-header {
+  background-color: #217333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.voltar-btn {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.voltar-btn:hover {
+  background-color: white;
+  color: #217333;
+}
+
+.coordenador-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #45a049;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: left;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Conteúdo principal */
+.main-content {
+  padding: 2rem;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px rgba(159, 67, 67, 0.1);
+}
