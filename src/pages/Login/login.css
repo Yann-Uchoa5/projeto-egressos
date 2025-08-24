@@ -1,11 +1,11 @@
 .login-container {
   min-height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;      /* inicia do topo */
+  justify-content: center;      /* centraliza horizontalmente */
   background-color: #ffffff;
-  padding: 0;
-  margin-top: -80px;
+  padding: 60px 0;              /* espaço do topo e embaixo */
+  margin: 0;                     /* remove margin negativa */
 }
 
 .login-card {
