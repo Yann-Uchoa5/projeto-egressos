@@ -1,11 +1,11 @@
 import React from 'react'
-import Home from './pages/TelaInicial/home'
+import Formulario from './pages/Formulario/formulario'
 import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Formulario />
     </div>
   )
 }
