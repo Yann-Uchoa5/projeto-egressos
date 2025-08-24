@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
 import TelaInicial from "./pages/TelaInicial/home";
 import Formulario from "./pages/Formulario/Formulario";
+import RespostasFormulario from "./pages/RespostasFormulario/RespostasFormulario";
 
 import "./App.css";
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<TelaInicial />} />
           <Route path="/login" element={<Login />} />
           <Route path="/formulario" element={<Formulario />} />
+          <Route path="/respostas" element={<RespostasFormulario />} />
         </Routes>
       </div>
     </Router>

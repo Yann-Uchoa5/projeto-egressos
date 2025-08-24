@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './login.css';
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -20,6 +22,10 @@ const Login = () => {
     e.preventDefault();
     // Aqui você pode adicionar a lógica de autenticação
     console.log('Dados do formulário:', formData);
+    
+    // Simulando login bem-sucedido - redireciona para a página de respostas
+    // Em um cenário real, você verificaria as credenciais primeiro
+    navigate('/respostas');
   };
 
   return (

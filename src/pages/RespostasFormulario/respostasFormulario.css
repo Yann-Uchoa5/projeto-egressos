@@ -1,0 +1,246 @@
+.respostas-container {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Header verde com informações do coordenador */
+.coordenador-header {
+  background-color: #217333;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.coordenador-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #45a049;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-align: left;
+}
+
+.user-name {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.user-role {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Conteúdo principal */
+.main-content {
+  padding: 2rem;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 2px 8px rgba(159, 67, 67, 0.1);
+}
+
+.page-title {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-align: left;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Seção de filtros */
+.filters-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.filters-label {
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+.search-container {
+  position: relative;
+  flex: 1;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 0.75rem 0.75rem 2.5rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background-color: white;
+}
+
+.search-input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+/* Tabela de respostas */
+.table-container {
+  overflow-x: auto;
+  margin-top: 0;
+}
+
+.respostas-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+.respostas-table th {
+  background-color: #f8f9fa;
+  color: #333;
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+  font-size: 0.95rem;
+  vertical-align: middle;
+}
+
+.respostas-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+  color: #333;
+  font-size: 0.9rem;
+  vertical-align: middle;
+  text-align: left;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa;
+}
+
+/* Alinhamento específico das colunas */
+.th-nome, .td-nome {
+  min-width: 200px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.th-curso, .td-curso {
+  min-width: 150px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.th-email, .td-email {
+  min-width: 250px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.th-ano, .td-ano {
+  min-width: 100px;
+  text-align: right;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .content-wrapper {
+    padding: 1.5rem;
+  }
+  
+  .page-title {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    padding-bottom: 0.5rem;
+  }
+  
+  .filters-section {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+    margin: 1rem 0 0.75rem 0;
+    padding: 0.5rem 0;
+  }
+  
+  .search-container {
+    max-width: none;
+  }
+  
+  .respostas-table th,
+  .respostas-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+    vertical-align: top;
+  }
+  
+  .th-nome, .td-nome {
+    min-width: 150px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .th-curso, .td-curso {
+    min-width: 100px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .th-email, .td-email {
+    min-width: 200px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .th-ano, .td-ano {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
