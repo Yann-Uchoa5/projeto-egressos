@@ -65,6 +65,7 @@
   font-weight: bold;
 }
 
+/* Inputs e select corrigidos */
 .form-input,
 .form-select {
   padding: 14px 16px;
@@ -72,11 +73,17 @@
   border-radius: 0;
   font-size: 16px;
   background-color: #ffffff;
+  color: #333333;           /* ✅ cor do texto visível */
   transition: border-color 0.2s ease;
   width: 100%;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.form-select option {
+  color: #333333;            /* cor do texto das opções */
+  background-color: #ffffff;  /* fundo das opções */
 }
 
 .form-input:focus,
