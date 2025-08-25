@@ -21,11 +21,14 @@ const BottomSection = () => {
     <div className="bottom-section">
       <h2 className="importance-title">Por que é importante?</h2>
       <p className="importance-text">
-        O projeto "A Voz do Egresso" é essencial para avaliar o impacto da formação do IFCE/Campus Crateús na trajetória profissional dos ex-alunos, fortalecendo o vínculo com a instituição e orientando melhorias que aproximam o ensino das demandas reais do mercado e da comunidade.
+        O projeto "A Voz do Egresso" é essencial para avaliar o impacto da formação do IFCE/Campus Boa Viagem na trajetória profissional dos ex-alunos, fortalecendo o vínculo com a instituição e orientando melhorias que aproximam o ensino das demandas reais do mercado e da comunidade.
       </p>
       <div className="cta-section">
         <p className="cta-text">
-          Você, egresso, pode colaborar utilizando o QR code acima ou clicando no botão:
+          O IFCE Campus Boa Viagem quer saber: Egresso, onde está você?
+        </p>
+        <p className="cta-text">
+          Responda ao questionário e mantenha seu vínculo com a instituição!
         </p>
         <button className="responder-btn">Responder questionário</button>
       </div>
