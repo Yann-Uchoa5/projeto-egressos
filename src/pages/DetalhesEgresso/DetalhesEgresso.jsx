@@ -8,85 +8,41 @@ const DetalhesEgresso = () => {
   const [egresso, setEgresso] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Dados mockados baseados no formulário real
   useEffect(() => {
-    // Simulando busca dos dados do egresso
-    const mockEgresso = {
-      id: id,
-      nome: "Yan Uchoa Da Silva",
-      curso: "Análise e Desenvolvimento de Sistemas",
-      email: "yan@gmail.com",
-      respostas: {
-        // Dados Pessoais
-        dadosPessoais: {
-          nomeCompleto: "Yan Uchoa Da Silva",
-          email: "yan@gmail.com",
-          genero: "Masculino",
-          etnia: "Pardo",
-          faixaEtaria: "26-35 anos"
-        },
-        // Ação Afirmativa e Localização
-        acaoAfirmativa: {
-          acaoAfirmativa: "Não",
-          acaoAfirmativaTipo: "-",
-          estadoAntes: "CE",
-          cidadeAntes: "BOA VIAGEM",
-          estadoAtual: "CE",
-          cidadeAtual: "FORTALEZA",
-          cursoConcluido: "Análise e Desenvolvimento de Sistemas"
-        },
-        // Formação e Bolsas
-        formacaoBolsas: {
-          auxilioGraduacao: "Sim",
-          tipoAuxilio: "Bolsa de Iniciação Científica",
-          posGraduacao: "Fiz especialização",
-          bolsista: "Bolsa de Iniciação Científica - Setor de Pesquisa"
-        },
-        // Experiência Profissional
-        experienciaProfissional: {
-          empregado: "Sim",
-          motivoNaoEmpregado: "-",
-          tempoPrimeiroEmprego: "Menos de 6 meses",
-          faixaSalarial: "3 a 5 salários mínimos",
-          atividadeProfissional: "DESENVOLVEDOR FULL STACK"
-        },
-        // Avaliação da Formação
-        avaliacaoFormacao: {
-          contribuiuMercado: "Excelente",
-          contribuiuExercicio: "Muito Bom",
-          contribuiuSalario: "Excelente",
-          contribuiuAscensao: "Muito Bom",
-          melhorouCondicao: "Excelente",
-          satisfacaoPessoal: "Muito Bom",
-          construiuCarreira: "Excelente"
-        },
-        // Sugestões e Avaliação do Curso
-        avaliacaoCurso: {
-          conhecimentosEssenciais: "Programação orientada a objetos, frameworks modernos como React e Node.js, metodologias ágeis e DevOps seriam conhecimentos essenciais para incluir no curso.",
-          qualidadeCurso: "Excelente",
-          corpoDocente: "Muito Bom",
-          metodosAvaliativos: "Bom",
-          coordenacao: "Excelente",
-          infraestrutura: "Muito Bom",
-          teoriaPratica: "Excelente",
-          dominioConteudos: "Muito Bom",
-          metodologias: "Bom",
-          estimuloAprendizado: "Excelente"
-        },
-        // Experiência Acadêmica
-        experienciaAcademica: {
-          buscaNovosConhecimentos: "Concordo Totalmente",
-          ambienteAcademico: "Concordo Totalmente",
-          problemasPsicologicos: "Discordo",
-          dificuldadesMateriais: "Discordo"
+    const load = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const res = await fetch(`http://localhost:8000/api/v1/admin/egressos/${id}`, {
+          headers: { 'Authorization': token ? `Bearer ${token}` : '' }
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.detail || 'Falha ao carregar egresso');
         }
+        const data = await res.json();
+        // Adaptar para o shape esperado na tela
+        setEgresso({
+          id: data.id,
+          nome: data.nome,
+          curso: data.curso,
+          email: data.email,
+          respostas: {
+            dadosPessoais: data.dados_pessoais || {},
+            acaoAfirmativa: data.acao_afirmativa || {},
+            formacaoBolsas: data.formacao_bolsas || {},
+            experienciaProfissional: data.experiencia_profissional || {},
+            avaliacaoFormacao: data.avaliacao_formacao || {},
+            avaliacaoCurso: data.avaliacao_curso || {},
+            experienciaAcademica: data.experiencia_academica || {},
+          }
+        });
+      } catch (e) {
+        console.error(e);
+      } finally {
+        setLoading(false);
       }
     };
-
-    setTimeout(() => {
-      setEgresso(mockEgresso);
-      setLoading(false);
-    }, 500);
+    load();
   }, [id]);
 
   const handleVoltar = () => {

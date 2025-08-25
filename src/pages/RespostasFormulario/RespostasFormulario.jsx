@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ifceLogo from '../../assets/ifce-logo.png';
 import './respostasFormulario.css';
@@ -7,39 +7,33 @@ const RespostasFormulario = () => {
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   
-  // Dados mockados para demonstração
-  const [respostas] = useState([
-    {
-      id: 1,
-      nome: "Yan Uchoa Da Silva",
-      curso: "ADS",
-      email: "yan@gmail.com"
-    },
-    {
-      id: 2,
-      nome: "Maria Silva Santos",
-      curso: "Sistemas de Informação",
-      email: "maria.silva@email.com"
-    },
-    {
-      id: 3,
-      nome: "João Pedro Costa",
-      curso: "ADS",
-      email: "joao.costa@email.com"
-    },
-    {
-      id: 4,
-      nome: "Ana Beatriz Lima",
-      curso: "Sistemas de Informação",
-      email: "ana.lima@email.com"
-    },
-    {
-      id: 5,
-      nome: "Carlos Eduardo Rocha",
-      curso: "ADS",
-      email: "carlos.rocha@email.com"
-    }
-  ]);
+  const [respostas, setRespostas] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+    const load = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        const res = await fetch('http://localhost:8000/api/v1/admin/egressos', {
+          headers: {
+            'Authorization': token ? `Bearer ${token}` : ''
+          }
+        });
+        if (!res.ok) {
+          const err = await res.json().catch(() => ({}));
+          throw new Error(err.detail || 'Falha ao carregar respostas');
+        }
+        const data = await res.json();
+        setRespostas(Array.isArray(data) ? data : []);
+      } catch (e) {
+        setError('Não foi possível carregar as respostas.');
+      } finally {
+        setLoading(false);
+      }
+    };
+    load();
+  }, []);
 
   const filteredRespostas = respostas.filter(resposta =>
     resposta.nome.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -91,6 +85,8 @@ const RespostasFormulario = () => {
 
           {/* Tabela de respostas */}
           <div className="table-container">
+            {loading && <div>Carregando...</div>}
+            {error && !loading && <div style={{ color: '#b00020' }}>{error}</div>}
             <table className="respostas-table">
               <thead>
                 <tr>

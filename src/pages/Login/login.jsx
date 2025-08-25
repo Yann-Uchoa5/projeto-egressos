@@ -18,14 +18,28 @@ const Login = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica de autenticação
-    console.log('Dados do formulário:', formData);
-    
-    // Simulando login bem-sucedido - redireciona para a página de respostas
-    // Em um cenário real, você verificaria as credenciais primeiro
-    navigate('/respostas');
+    try {
+      const body = new URLSearchParams();
+      body.append('username', formData.email);
+      body.append('password', formData.password);
+
+      const res = await fetch('http://localhost:8000/api/v1/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body,
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || 'Falha no login');
+      }
+      const data = await res.json();
+      localStorage.setItem('token', data.access_token);
+      navigate('/respostas');
+    } catch (error) {
+      alert('Credenciais inválidas');
+    }
   };
 
   return (

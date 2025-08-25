@@ -84,9 +84,91 @@ const Formulario = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Dados completos do formulário:', formData);
+    const payload = {
+      nome: formData.nomeCompleto,
+      email: formData.email,
+      curso: formData.cursoConcluido,
+      dados_pessoais: {
+        nomeCompleto: formData.nomeCompleto,
+        email: formData.email,
+        genero: formData.genero,
+        etnia: formData.etnia,
+        faixaEtaria: formData.faixaEtaria,
+      },
+      acao_afirmativa: {
+        acaoAfirmativa: formData.acaoAfirmativa,
+        acaoAfirmativaTipo: formData.acaoAfirmativaTipo,
+        estadoAntes: formData.estadoAntes,
+        cidadeAntes: formData.cidadeAntes,
+        estadoAtual: formData.estadoAtual,
+        cidadeAtual: formData.cidadeAtual,
+        cursoConcluido: formData.cursoConcluido,
+      },
+      formacao_bolsas: {
+        auxilioGraduacao: formData.auxilioGraduacao,
+        tipoAuxilio: formData.tipoAuxilio,
+        posGraduacao: formData.posGraduacao,
+        tipoPosGraduacao: formData.tipoPosGraduacao,
+        bolsista: formData.bolsista,
+      },
+      experiencia_profissional: {
+        empregado: formData.empregado,
+        motivoNaoEmpregado: formData.motivoNaoEmpregado,
+        modalidadeTrabalho: formData.modalidadeTrabalho,
+        tempoPrimeiroEmprego: formData.tempoPrimeiroEmprego,
+        faixaSalarial: formData.faixaSalarial,
+        atividadeProfissional: formData.atividadeProfissional,
+      },
+      avaliacao_formacao: {
+        contribuiuMercado: formData.contribuiuMercado,
+        contribuiuExercicio: formData.contribuiuExercicio,
+        contribuiuSalario: formData.contribuiuSalario,
+        contribuiuAscensao: formData.contribuiuAscensao,
+        melhorouCondicao: formData.melhorouCondicao,
+        satisfacaoPessoal: formData.satisfacaoPessoal,
+        construiuCarreira: formData.construiuCarreira,
+      },
+      avaliacao_curso: {
+        conhecimentosEssenciais: formData.conhecimentosEssenciais,
+        qualidadeCurso: formData.qualidadeCurso,
+        corpoDocente: formData.corpoDocente,
+        metodosAvaliativos: formData.metodosAvaliativos,
+        coordenacao: formData.coordenacao,
+        infraestrutura: formData.infraestrutura,
+        teoriaPratica: formData.teoriaPratica,
+        dominioConteudos: formData.dominioConteudos,
+        metodologias: formData.metodologias,
+        estimuloAprendizado: formData.estimuloAprendizado,
+      },
+      experiencia_academica: {
+        buscaNovosConhecimentos: formData.buscaNovosConhecimentos,
+        ambienteAcademico: formData.ambienteAcademico,
+        problemasPsicologicos: formData.problemasPsicologicos,
+        dificuldadesMateriais: formData.dificuldadesMateriais,
+      },
+    };
+
+    try {
+      const res = await fetch('http://localhost:8000/api/v1/formularios', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) {
+        const err = await res.json().catch(() => ({}));
+        throw new Error(err.detail || 'Erro ao enviar formulário');
+      }
+      const data = await res.json();
+      console.log('Formulário salvo:', data);
+      alert('Formulário enviado com sucesso!');
+      setCurrentPage(7);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      console.error(error);
+      alert('Não foi possível enviar o formulário. Tente novamente.');
+    }
   };
 
   const progress = ((currentPage + 1) / 8) * 100;
