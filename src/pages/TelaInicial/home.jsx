@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 import Header from '../../components/Header';
 import ImageSection from '../../components/ImageSection';
 import './home.css';
@@ -17,6 +18,9 @@ const MainContent = () => {
 
 // Componente para a seção inferior
 const BottomSection = () => {
+
+  const navigate = useNavigate();
+
   return (
     <div className="bottom-section">
       <h2 className="importance-title">Por que é importante?</h2>
@@ -30,7 +34,7 @@ const BottomSection = () => {
         <p className="cta-text">
           Responda ao questionário e mantenha seu vínculo com a instituição!
         </p>
-        <button className="responder-btn">Responder questionário</button>
+        <button className="responder-btn" onClick={() => navigate("/formulario")} >Responder questionário</button>
       </div>
     </div>
   );
