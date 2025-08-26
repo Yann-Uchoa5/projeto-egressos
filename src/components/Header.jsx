@@ -1,7 +1,11 @@
 import React from 'react';
 import ifceLogo from '../assets/ifce-logo.png';
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+   const navigate = useNavigate();
+
   return (
     <header className="header">
       <div className="header-main">
@@ -15,7 +19,7 @@ const Header = () => {
           </div>
         </div>
         <div className="header-right">
-          <button className="questionario-btn">Questionário</button>
+          <button className="questionario-btn" onClick={() => navigate("/formulario")}>Questionário</button>
         </div>
       </div>
       <div className="header-sub">
