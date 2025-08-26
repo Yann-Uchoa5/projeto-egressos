@@ -1053,7 +1053,7 @@ const Formulario = () => {
       <HeaderFormulario />
       <main className="formulario-main">
         <div className="formulario-content">
-          <h1 className="formulario-title">Pesquisa com egressos IFCE</h1>
+          <h1 className="formulario-title">Pesquisa com Egressos IFCE</h1>
           
           <p className="formulario-description">
             Este formulário faz parte da Pesquisa de Acompanhamento de Egressos do IFCE/Campus Boa Viagem, 
