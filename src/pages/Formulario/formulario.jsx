@@ -180,7 +180,7 @@ const Formulario = () => {
           <>
             <h2 className="page-title">Dados Pessoais</h2>
             <div className="form-group">
-              <label htmlFor="nomeCompleto" className="form-label">Nome completo</label>
+              <label htmlFor="nomeCompleto" className="form-label">Nome completo <p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p></label>
               <input
               type="text"
               id="nomeCompleto"
@@ -193,7 +193,7 @@ const Formulario = () => {
             />
             </div>
             <div className="form-group">
-              <label htmlFor="email" className="form-label">E-mail principal</label>
+              <label htmlFor="email" className="form-label">E-mail principal <p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p></label>
               <input
                 type="email"
                 id="email"
@@ -206,8 +206,8 @@ const Formulario = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="genero" className="form-label">
-                Qual sua identidade de gênero?
+              <label htmlFor="genero" className="form-label"> 
+                Qual sua identidade de gênero? <p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="genero"
@@ -227,7 +227,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="etnia" className="form-label">
-                Considerando sua identidade etnico-racial, como você se autodeclara?
+                Considerando sua identidade etnico-racial, como você se autodeclara?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="etnia"
@@ -247,7 +247,7 @@ const Formulario = () => {
               </select>
             </div>
             <div className="form-group">
-              <label htmlFor="faixaEtaria" className="form-label">Qual sua faixa-etária?</label>
+              <label htmlFor="faixaEtaria" className="form-label">Qual sua faixa-etária?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p></label>
               <select
                 id="faixaEtaria"
                 name="faixaEtaria"
@@ -272,7 +272,7 @@ const Formulario = () => {
             <h2 className="page-title">Ação Afirmativa e Localização</h2>
             <div className="form-group">
               <label htmlFor="acaoAfirmativa" className="form-label">
-                Você ingressou na universidade por meio de alguma política de ação afirmativa?
+                Você ingressou na universidade por meio de alguma política de ação afirmativa?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="acaoAfirmativa"
@@ -290,7 +290,7 @@ const Formulario = () => {
             {formData.acaoAfirmativa === 'Sim' && (
               <div className="form-group">
                 <label htmlFor="acaoAfirmativaTipo" className="form-label">
-                  Em caso afirmativo, por favor, informe qual ação:
+                  Em caso afirmativo, por favor, informe qual ação: <p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
                 </label>
                 <input
                   type="text"
@@ -305,7 +305,7 @@ const Formulario = () => {
             )}
             <div className="form-group">
               <label htmlFor="estadoAntes" className="form-label">
-                Estado que você residia antes de ingressar no IFCE?
+                Estado que você residia antes de ingressar no IFCE?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <input
                 type="text"
@@ -320,7 +320,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="cidadeAntes" className="form-label">
-                Cidade que você residia antes de ingressar no IFCE?
+                Cidade que você residia antes de ingressar no IFCE?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <input
                 type="text"
@@ -335,7 +335,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="estadoAtual" className="form-label">
-                Estado onde reside atualmente?
+                Estado onde reside atualmente?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <input
                 type="text"
@@ -350,7 +350,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="cidadeAtual" className="form-label">
-                Cidade que você reside atualmente?
+                Cidade que você reside atualmente?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <input
                 type="text"
@@ -365,7 +365,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="cursoConcluido" className="form-label">
-                Qual curso você concluiu no IFCE?
+                Qual curso você concluiu no IFCE?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="cursoConcluido"
@@ -392,7 +392,7 @@ const Formulario = () => {
             <h2 className="page-title">Formação e Bolsas</h2>
             <div className="form-group">
               <label htmlFor="auxilioGraduacao" className="form-label">
-                Durante o período da graduação, você recebeu algum tipo de auxílio?
+                Durante o período da graduação, você recebeu algum tipo de auxílio?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="auxilioGraduacao"
@@ -410,7 +410,7 @@ const Formulario = () => {
             {formData.auxilioGraduacao === 'Sim' && (
               <div className="form-group">
                 <label htmlFor="tipoAuxilio" className="form-label">
-                  Qual tipo de auxílio você recebeu?
+                  Qual tipo de auxílio você recebeu?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
                 </label>
                 <input
                   type="text"
@@ -425,7 +425,7 @@ const Formulario = () => {
             )}
             <div className="form-group">
               <label htmlFor="posGraduacao" className="form-label">
-                Após a conclusão do curso no IFCE, você:
+                Após a conclusão do curso no IFCE, você:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="posGraduacao"
@@ -446,7 +446,7 @@ const Formulario = () => {
             {['Fiz especialização', 'Fiz mestrado', 'Fiz doutorado', 'Fiz pós-doutorado'].includes(formData.posGraduacao) && (
               <div className="form-group">
                 <label htmlFor="tipoPosGraduacao" className="form-label">
-                  Qual tipo de pós-graduação você fez?
+                  Qual tipo de pós-graduação você fez?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
                 </label>
                 <input
                   type="text"
@@ -461,7 +461,7 @@ const Formulario = () => {
             )}
             <div className="form-group">
               <label htmlFor="bolsista" className="form-label">
-                Se em algum momento da graduação no IFCE você foi bolsista, informe o tipo de bolsa e o setor?
+                Se em algum momento da graduação no IFCE você foi bolsista, informe o tipo de bolsa e o setor?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <input
                 type="text"
@@ -481,7 +481,7 @@ const Formulario = () => {
             <h2 className="page-title">Experiência Profissional</h2>
             <div className="form-group">
               <label htmlFor="empregado" className="form-label">
-                Você exerce atividade profissional remunerada atualmente?
+                Você exerce atividade profissional remunerada atualmente?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="empregado"
@@ -499,7 +499,7 @@ const Formulario = () => {
             {formData.empregado === 'Não' && (
               <div className="form-group">
                 <label htmlFor="motivoNaoEmpregado" className="form-label">
-                  Caso não esteja empregado na sua área de formação descreva o(os) motivo(os):
+                  Caso não esteja empregado na sua área de formação descreva o(os) motivo(os):<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
                 </label>
                 <textarea
                   id="motivoNaoEmpregado"
@@ -515,7 +515,7 @@ const Formulario = () => {
             {formData.empregado === 'Sim' && (
               <div className="form-group">
                 <label htmlFor="modalidadeTrabalho" className="form-label">
-                  Se você está atualmente empregado, qual é a sua modalidade de inserção profissional no mercado de trabalho?
+                  Se você está atualmente empregado, qual é a sua modalidade de inserção profissional no mercado de trabalho?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
                 </label>
                 <select
                   id="modalidadeTrabalho"
@@ -536,7 +536,7 @@ const Formulario = () => {
             )}
             <div className="form-group">
               <label htmlFor="tempoPrimeiroEmprego" className="form-label">
-                Quanto tempo após a conclusão da graduação você conquistou seu primeiro emprego?
+                Quanto tempo após a conclusão da graduação você conquistou seu primeiro emprego?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="tempoPrimeiroEmprego"
@@ -557,7 +557,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="faixaSalarial" className="form-label">
-                Atualmente, qual sua faixa salarial? (Levando em consideração o salário mínimo atual de R$ 1.518,00)
+                Atualmente, qual sua faixa salarial? (Levando em consideração o salário mínimo atual de R$ 1.518,00)<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="faixaSalarial"
@@ -578,7 +578,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="atividadeProfissional" className="form-label">
-                Qual a sua atividade profissional atualmente?
+                Qual a sua atividade profissional atualmente?<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <input
                 type="text"
@@ -599,7 +599,7 @@ const Formulario = () => {
             <h2 className="page-title">Avaliação da Formação</h2>
             <div className="form-group">
               <label htmlFor="contribuiuMercado" className="form-label">
-                Minha formação no IFCE contribuiu de forma significativa para minha inserção no mercado de trabalho.
+                Minha formação no IFCE contribuiu para minha inserção no mercado de trabalho.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="contribuiuMercado"
@@ -619,7 +619,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="contribuiuExercicio" className="form-label">
-                Minha formação no IFCE contribuiu para o meu exercício profissional.
+                Minha formação no IFCE contribuiu para o meu exercício profissional.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="contribuiuExercicio"
@@ -639,7 +639,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="contribuiuSalario" className="form-label">
-                Minha formação no IFCE contribuiu para obter um salário compatível.
+                Minha formação no IFCE contribuiu para obter um salário compatível.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="contribuiuSalario"
@@ -659,7 +659,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="contribuiuAscensao" className="form-label">
-                Minha formação no IFCE contribuiu para proporcionar ascensão social no âmbito profissional.
+                Minha formação no IFCE contribuiu para proporcionar ascensão social no âmbito profissional.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="contribuiuAscensao"
@@ -679,7 +679,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="melhorouCondicao" className="form-label">
-                Minha formação contribuiu para melhorar minha condição socioeconômica atual.
+                Minha formação contribuiu para melhorar minha condição socioeconômica atual.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="melhorouCondicao"
@@ -699,7 +699,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="satisfacaoPessoal" className="form-label">
-                Minha formação no IFCE contribuiu para minha satisfação pessoal.
+                Minha formação no IFCE contribuiu para minha satisfação pessoal.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="satisfacaoPessoal"
@@ -719,7 +719,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="construiuCarreira" className="form-label">
-                Minha formação contribuiu para construir minha carreira profissional.
+                Minha formação contribuiu para construir minha carreira profissional.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="construiuCarreira"
@@ -746,6 +746,7 @@ const Formulario = () => {
             <div className="form-group">
               <label htmlFor="conhecimentosEssenciais" className="form-label">
                 Na sua opinião, quais conhecimentos você acredita serem essenciais para inclusão no curso, levando em consideração as demandas do mercado de trabalho?
+              <span style={{ color: 'red' }}> *</span>
               </label>
               <textarea
                 id="conhecimentosEssenciais"
@@ -760,7 +761,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="qualidadeCurso" className="form-label">
-                Considero o curso concluído como:
+                Considero o curso concluído como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="qualidadeCurso"
@@ -780,7 +781,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="corpoDocente" className="form-label">
-                Considero o corpo docente como:
+                Considero o corpo docente como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="corpoDocente"
@@ -800,7 +801,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="metodosAvaliativos" className="form-label">
-                Considero os métodos avaliativos utilizados como:
+                Considero os métodos avaliativos utilizados como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="metodosAvaliativos"
@@ -820,7 +821,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="coordenacao" className="form-label">
-                Considero a qualidade do trabalho e atendimento realizados pela Coordenação como:
+                Considero a qualidade do trabalho e atendimento realizados pela Coordenação como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="coordenacao"
@@ -840,7 +841,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="infraestrutura" className="form-label">
-                Considero a infraestrutura e o acervo da biblioteca do meu curso como:
+                Considero a infraestrutura e o acervo da biblioteca do meu curso como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="infraestrutura"
@@ -860,7 +861,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="teoriaPratica" className="form-label">
-                Considero a relação entre a teoria e a prática estabelecida pelos professores durante o curso de graduação como:
+                Considero a relação entre a teoria e a prática estabelecida pelos professores durante o curso de graduação como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="teoriaPratica"
@@ -880,7 +881,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="dominioConteudos" className="form-label">
-                Considero o domínio dos conteúdos ensinados como:
+                Considero o domínio dos conteúdos ensinados como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="dominioConteudos"
@@ -900,7 +901,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="metodologias" className="form-label">
-                Considero as metodologias de ensino-aprendizagem como:
+                Considero as metodologias de ensino-aprendizagem como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="metodologias"
@@ -920,7 +921,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="estimuloAprendizado" className="form-label">
-                Considero o estímulo para o aprendizado como:
+                Considero o estímulo para o aprendizado como:<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="estimuloAprendizado"
@@ -946,7 +947,7 @@ const Formulario = () => {
             <h2 className="page-title">Experiência Acadêmica</h2>
             <div className="form-group">
               <label htmlFor="buscaNovosConhecimentos" className="form-label">
-                Após a conclusão do curso tive necessidade de buscar novos conhecimentos para aprimorar minha formação.
+                Após a conclusão do curso tive necessidade de buscar novos conhecimentos para aprimorar minha formação.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="buscaNovosConhecimentos"
@@ -966,7 +967,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="ambienteAcademico" className="form-label">
-                O ambiente acadêmico proporcionado pelo IFCE Campus Boa Viagem contribuiu para a minha formação ética e cidadã.
+                O ambiente acadêmico proporcionado pelo IFCE Campus Boa Viagem contribuiu para a minha formação ética e cidadã.<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="ambienteAcademico"
@@ -986,7 +987,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="problemasPsicologicos" className="form-label">
-                Enfrentei problemas psicológicos durante o curso gerado pelo ambiente acadêmico
+                Enfrentei problemas psicológicos durante o curso gerado pelo ambiente acadêmico<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="problemasPsicologicos"
@@ -1006,7 +1007,7 @@ const Formulario = () => {
             </div>
             <div className="form-group">
               <label htmlFor="dificuldadesMateriais" className="form-label">
-                Enfrentei dificuldades de ordem material que tornou minha permanência no curso desafiadora
+                Enfrentei dificuldades de ordem material que tornou minha permanência no curso desafiadora<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p>
               </label>
               <select
                 id="dificuldadesMateriais"
