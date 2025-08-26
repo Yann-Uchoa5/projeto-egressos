@@ -73,7 +73,7 @@
   border-radius: 0;
   font-size: 16px;
   background-color: #ffffff;
-  color: #333333;           /* ✅ cor do texto visível */
+  color: #333333;
   transition: border-color 0.2s ease;
   width: 100%;
   -webkit-appearance: none;
@@ -82,8 +82,8 @@
 }
 
 .form-select option {
-  color: #333333;            /* cor do texto das opções */
-  background-color: #ffffff;  /* fundo das opções */
+  color: #333333;
+  background-color: #ffffff;
 }
 
 .form-input:focus,
@@ -97,6 +97,7 @@
   cursor: pointer;
 }
 
+/* Botão principal do formulário */
 .formulario-button {
   background-color: #4CAF50;
   color: white;
@@ -170,6 +171,7 @@
   justify-content: center;
 }
 
+/* Botões de navegação */
 .nav-button {
   background-color: #666666;
   color: white;
@@ -194,6 +196,14 @@
 
 .next-button:hover {
   background-color: #45a049;
+}
+
+/* Ajusta o botão Enviar dentro da navegação para ficar alinhado */
+.form-navigation .formulario-button {
+  flex: 1;
+  width: auto;
+  padding: 12px 24px;
+  text-align: center;
 }
 
 /* Textarea */
@@ -261,6 +271,7 @@
   .nav-button {
     padding: 12px 24px;
     font-size: 16px;
+    margin-bottom: 35px;
   }
   
   .form-navigation {

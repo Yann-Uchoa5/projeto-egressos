@@ -1032,7 +1032,10 @@ const Formulario = () => {
             <h2 className="page-title">Finalização</h2>
             <div className="form-group">
               <p style={{ textAlign: 'center', fontSize: '18px', color: '#4CAF50' }}>
-                Obrigado por participar da pesquisa! 🎉
+                Obrigado por participar da pesquisa!
+              </p>
+              <p style={{ textAlign: 'center', fontSize: '18px', color: '#4CAF50' }}>
+                Clique em "Enviar Formulário" para concluir sua participação.
               </p>
               <p style={{ textAlign: 'center', marginTop: '20px' }}>
                 Suas respostas são muito importantes para melhorarmos nossos cursos.
@@ -1094,7 +1097,7 @@ const Formulario = () => {
               ) : (
                 <button 
                   type="submit" 
-                  className="formulario-button"
+                  className="nav-button next-button"
                 >
                   Enviar Formulário
                 </button>
