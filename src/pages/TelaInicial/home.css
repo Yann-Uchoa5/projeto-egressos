@@ -301,6 +301,34 @@ body {
   line-height: 1.4;
 }
 
+/* Link administrativo discreto */
+.admin-link-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  background-color: #f8f9fa;
+  border-top: 1px solid #e9ecef;
+}
+
+.admin-link {
+  background: none;
+  border: none;
+  color: #adb5bd;
+  font-size: 0.85rem;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.admin-link:hover {
+  color: #217333;
+  background-color: #e8f5e9;
+  text-decoration: none;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
   .content-grid {
@@ -367,6 +395,15 @@ body {
     gap: 2rem;
     text-align: center;
   }
+  
+  .admin-link-container {
+    padding: 0.75rem 0;
+  }
+  
+  .admin-link {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -405,5 +442,12 @@ body {
     font-size: 1.2rem;
   }
 
+  .admin-link-container {
+    padding: 0.5rem 0;
+  }
   
+  .admin-link {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
 }

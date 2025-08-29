@@ -81,6 +81,23 @@ const Footer = () => {
   );
 };
 
+// Componente discreto para acesso do coordenador
+const AdminLink = () => {
+  const navigate = useNavigate();
+
+  return (
+    <div className="admin-link-container">
+      <button 
+        className="admin-link" 
+        onClick={() => navigate("/login")}
+        title="Acesso do Coordenador"
+      >
+        Área Administrativa
+      </button>
+    </div>
+  );
+};
+
 // Componente principal da página
 const Home = () => {
   return (
@@ -94,6 +111,7 @@ const Home = () => {
       </main>
       <BottomSection />
       <Footer />
+      <AdminLink />
     </div>
   );
 };
