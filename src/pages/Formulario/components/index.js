@@ -1,0 +1,11 @@
+export { default as ProgressBar } from './ProgressBar';
+export { default as FormPage } from './FormPage';
+export { default as FormNavigation } from './FormNavigation';
+export { default as DadosPessoais } from './pages/DadosPessoais';
+export { default as AcaoAfirmativaLocalizacao } from './pages/AcaoAfirmativaLocalizacao';
+export { default as FormacaoBolsas } from './pages/FormacaoBolsas';
+export { default as ExperienciaProfissional } from './pages/ExperienciaProfissional';
+export { default as AvaliacaoFormacao } from './pages/AvaliacaoFormacao';
+export { default as AvaliacaoCurso } from './pages/AvaliacaoCurso';
+export { default as ExperienciaAcademica } from './pages/ExperienciaAcademica';
+export { default as Finalizacao } from './pages/Finalizacao';

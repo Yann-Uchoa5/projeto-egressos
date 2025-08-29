@@ -345,3 +345,75 @@
     height: 18px;
   }
 }
+
+/* Estilos para campos obrigatórios */
+.required {
+  color: #e30000ff;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Estilos para mensagens */
+.success-message {
+  text-align: center;
+  font-size: 18px;
+  color: #4CAF50;
+  margin: 10px 0;
+}
+
+.info-message {
+  text-align: center;
+  margin-top: 20px;
+  color: #666;
+}
+
+.page-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+/* Estilos para textarea */
+.form-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-textarea:focus {
+  outline: none;
+  border-color: #217333;
+  box-shadow: 0 0 0 2px rgba(33, 115, 51, 0.2);
+}
+
+/* Estilos para checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #333;
+  cursor: pointer;
+}
+
+
+
+/* Reset e estilos base */
