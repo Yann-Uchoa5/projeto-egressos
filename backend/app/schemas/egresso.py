@@ -15,6 +15,7 @@ class EgressoSections(BaseModel):
 class EgressoBase(BaseModel):
     nome: str
     email: EmailStr
+    telefone: str
     curso: Optional[str] = None
 
 

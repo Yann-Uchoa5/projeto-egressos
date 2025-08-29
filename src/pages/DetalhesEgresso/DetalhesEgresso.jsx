@@ -112,6 +112,10 @@ const DetalhesEgresso = () => {
                   <span>{egresso.respostas.dadosPessoais.email}</span>
                 </div>
                 <div className="info-item">
+                  <label>Telefone:</label>
+                  <span>{egresso.respostas.dadosPessoais.telefone}</span>
+                </div>
+                <div className="info-item">
                   <label>Gênero:</label>
                   <span>{egresso.respostas.dadosPessoais.genero}</span>
                 </div>

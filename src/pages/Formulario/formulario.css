@@ -288,3 +288,60 @@
     gap: 20px;
   }
 }
+
+/* Estilos para o campo de telefone */
+.form-input[type="tel"] {
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+/* Estilos para a caixa de confirmação */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.checkbox-input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  cursor: pointer;
+  accent-color: #4CAF50;
+}
+
+.checkbox-label {
+  color: #333333;
+  font-size: 14px;
+  line-height: 1.6;
+  cursor: pointer;
+  flex: 1;
+  text-align: left;
+}
+
+.checkbox-group:hover {
+  background-color: #e9ecef;
+  border-color: #4CAF50;
+}
+
+/* Responsividade para a caixa de confirmação */
+@media (max-width: 768px) {
+  .checkbox-group {
+    padding: 12px;
+    gap: 10px;
+  }
+  
+  .checkbox-label {
+    font-size: 13px;
+  }
+  
+  .checkbox-input {
+    width: 18px;
+    height: 18px;
+  }
+}

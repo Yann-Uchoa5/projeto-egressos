@@ -8,6 +8,7 @@ const Formulario = () => {
     // Dados Pessoais
     nome: '',
     email: '',
+    telefone: '',
     genero: '',
     etnia: '',
     faixaEtaria: '',
@@ -59,14 +60,17 @@ const Formulario = () => {
     buscaNovosConhecimentos: '',
     ambienteAcademico: '',
     problemasPsicologicos: '',
-    dificuldadesMateriais: ''
+    dificuldadesMateriais: '',
+    
+    // Confirmação
+    aceitaUsoDados: false
   });
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: type === 'checkbox' ? checked : value
     }));
   };
 
@@ -86,13 +90,22 @@ const Formulario = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validação da confirmação de uso dos dados
+    if (!formData.aceitaUsoDados) {
+      alert('É necessário confirmar o uso dos seus dados para prosseguir com o envio do formulário.');
+      return;
+    }
+    
     const payload = {
       nome: formData.nomeCompleto,
       email: formData.email,
+      telefone: formData.telefone,
       curso: formData.cursoConcluido,
       dados_pessoais: {
         nomeCompleto: formData.nomeCompleto,
         email: formData.email,
+        telefone: formData.telefone,
         genero: formData.genero,
         etnia: formData.etnia,
         faixaEtaria: formData.faixaEtaria,
@@ -202,6 +215,19 @@ const Formulario = () => {
                 onChange={handleInputChange}
                 className="form-input"
                 placeholder="Digite seu e-mail"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="telefone" className="form-label">Telefone<p style={{ textAlign: 'center', fontSize: '18px', color: '#e30000ff' }} >*</p></label>
+              <input
+                type="tel"
+                id="telefone"
+                name="telefone"
+                value={formData.telefone}
+                onChange={handleInputChange}
+                className="form-input"
+                placeholder="(00) 00000-0000"
                 required
               />
             </div>
@@ -1041,6 +1067,23 @@ const Formulario = () => {
               <p style={{ textAlign: 'center', marginTop: '20px' }}>
                 Suas respostas são muito importantes para melhorarmos nossos cursos.
               </p>
+            </div>
+            
+            <div className="form-group">
+              <div className="checkbox-group">
+                <input
+                  type="checkbox"
+                  id="aceitaUsoDados"
+                  name="aceitaUsoDados"
+                  checked={formData.aceitaUsoDados}
+                  onChange={handleInputChange}
+                  className="checkbox-input"
+                  required
+                />
+                <label htmlFor="aceitaUsoDados" className="checkbox-label">
+                  <span style={{ color: '#e30000ff' }}>*</span> Eu confirmo e autorizo o uso dos meus dados pessoais para fins de pesquisa acadêmica, conforme a Lei Geral de Proteção de Dados (LGPD). Declaro que as informações fornecidas são verdadeiras e que estou ciente de que meus dados serão tratados com confidencialidade e utilizados exclusivamente para fins educacionais e de melhoria dos cursos do IFCE Campus Boa Viagem.
+                </label>
+              </div>
             </div>
           </>
         );
