@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
-import HeaderFormulario from '../../components/HeaderFormulario';
-import ProgressBar from './components/ProgressBar';
-import FormPage from './components/FormPage';
-import FormNavigation from './components/FormNavigation';
+import { 
+  HeaderFormulario,
+  Modal
+} from '../../components';
+import { 
+  ProgressBar, 
+  FormPage, 
+  FormNavigation
+} from './components';
 import { useFormValidation } from './hooks/useFormValidation';
 import { useFormProgress } from './hooks/useFormProgress';
 import './formulario.css';
 
 const Formulario = () => {
   const [currentPage, setCurrentPage] = useState(0);
+  const [modalConfig, setModalConfig] = useState({
+    isOpen: false,
+    title: '',
+    message: '',
+    type: 'info'
+  });
   const [formData, setFormData] = useState({
     // Dados Pessoais
     nomeCompleto: '',
@@ -74,6 +85,24 @@ const Formulario = () => {
   const { validateCurrentPage } = useFormValidation(formData, currentPage);
   const { progress } = useFormProgress(formData, currentPage);
 
+  const showModal = (title, message, type = 'info') => {
+    setModalConfig({
+      isOpen: true,
+      title,
+      message,
+      type
+    });
+  };
+
+  const closeModal = () => {
+    setModalConfig({
+      isOpen: false,
+      title: '',
+      message: '',
+      type: 'info'
+    });
+  };
+
   const handleInputChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData(prev => ({
@@ -84,7 +113,11 @@ const Formulario = () => {
 
   const handleNext = () => {
     if (!validateCurrentPage()) {
-      alert('Por favor, preencha todos os campos obrigatórios antes de continuar.');
+      showModal(
+        'Campos Obrigatórios',
+        'Por favor, preencha todos os campos obrigatórios antes de continuar.',
+        'warning'
+      );
       return;
     }
     
@@ -105,7 +138,11 @@ const Formulario = () => {
     e.preventDefault();
     
     if (!formData.aceitaUsoDados) {
-      alert('É necessário confirmar o uso dos seus dados para prosseguir com o envio do formulário.');
+      showModal(
+        'Confirmação Necessária',
+        'É necessário confirmar o uso dos seus dados para prosseguir com o envio do formulário.',
+        'warning'
+      );
       return;
     }
     
@@ -114,13 +151,21 @@ const Formulario = () => {
       const response = await submitForm(payload);
       
       if (response.success) {
-        alert('Formulário enviado com sucesso!');
+        showModal(
+          'Sucesso!',
+          'Formulário enviado com sucesso!',
+          'success'
+        );
         setCurrentPage(7);
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     } catch (error) {
       console.error(error);
-      alert('Não foi possível enviar o formulário. Tente novamente.');
+      showModal(
+        'Erro',
+        'Não foi possível enviar o formulário. Tente novamente.',
+        'error'
+      );
     }
   };
 
@@ -155,12 +200,20 @@ const Formulario = () => {
               onPrevious={handlePrevious}
               onNext={handleNext}
             />
-          </form>
-        </div>
-      </main>
-    </div>
-  );
-};
+                     </form>
+         </div>
+       </main>
+       
+       <Modal
+         isOpen={modalConfig.isOpen}
+         onClose={closeModal}
+         title={modalConfig.title}
+         message={modalConfig.message}
+         type={modalConfig.type}
+       />
+     </div>
+   );
+ };
 
 // Funções auxiliares
 const buildPayload = (formData) => ({

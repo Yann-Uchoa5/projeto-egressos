@@ -9,3 +9,4 @@ export { default as AvaliacaoFormacao } from './pages/AvaliacaoFormacao';
 export { default as AvaliacaoCurso } from './pages/AvaliacaoCurso';
 export { default as ExperienciaAcademica } from './pages/ExperienciaAcademica';
 export { default as Finalizacao } from './pages/Finalizacao';
+export { default as FormField } from './common/FormField';
