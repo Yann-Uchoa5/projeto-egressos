@@ -8,11 +8,11 @@ class Egresso(Base):
 
     id = Column(Integer, primary_key=True, index=True)
     nome = Column(String(255), nullable=False)
-    email = Column(String(255), nullable=False, index=True)
-    telefone = Column(String(20), nullable=False)
+    email = Column(String(255), nullable=False, unique=True, index=True)
+    telefone = Column(String(20), nullable=False, unique=True, index=True)
     curso = Column(String(255), nullable=True)
 
-    # Seções do formulário (estrutura flexível em JSON)
+    # Seções do formulário
     dados_pessoais = Column(JSON, nullable=False, default={})
     acao_afirmativa = Column(JSON, nullable=False, default={})
     formacao_bolsas = Column(JSON, nullable=False, default={})
@@ -23,5 +23,4 @@ class Egresso(Base):
 
     criado_em = Column(DateTime(timezone=True), server_default=func.now())
     atualizado_em = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
-
 
