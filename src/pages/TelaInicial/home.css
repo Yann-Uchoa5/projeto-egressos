@@ -71,8 +71,8 @@ body {
 }
 
 .questionario-btn {
-  background-color: #217333;
-  color: white;
+  background-color: #feffff;
+  color: #217333;
   border: 2px solid white;
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
@@ -83,8 +83,9 @@ body {
 }
 
 .questionario-btn:hover {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.919);
   color: #217333;
+  border: 2px solid white;
 }
 
 /* Sub-header */
@@ -315,7 +316,6 @@ body {
   border: none;
   color: #adb5bd;
   font-size: 0.85rem;
-  text-decoration: underline;
   cursor: pointer;
   padding: 0.5rem 1rem;
   border-radius: 4px;
@@ -324,9 +324,9 @@ body {
 }
 
 .admin-link:hover {
-  color: #217333;
+  color: #b8c4bb;
   background-color: #e8f5e9;
-  text-decoration: none;
+  
 }
 
 /* Responsividade */
