@@ -92,7 +92,7 @@ const AdminLink = () => {
         onClick={() => navigate("/login")}
         title="Acesso do Coordenador"
       >
-        Área Administrativa
+        Administrativo
       </button>
     </div>
   );

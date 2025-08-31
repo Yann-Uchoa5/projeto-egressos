@@ -298,14 +298,14 @@ body {
 }
 
 .footer-contact p {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.20;
   line-height: 1.4;
 }
 
 /* Link administrativo discreto */
 .admin-link-container {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   padding: 1rem 0;
   background-color: #f8f9fa;
   border-top: 1px solid #e9ecef;
