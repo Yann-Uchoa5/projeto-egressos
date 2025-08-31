@@ -1,12 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import './detalhesEgresso.css';
 
 const DetalhesEgresso = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { logout } = useAuth();
   const [egresso, setEgresso] = useState(null);
   const [loading, setLoading] = useState(true);
+
+  // Função para fazer logout
+  const handleLogout = () => {
+    logout();
+  };
 
   useEffect(() => {
     const load = async () => {
@@ -82,6 +89,13 @@ const DetalhesEgresso = () => {
               <span className="user-role">Coordenador</span>
             </div>
           </div>
+                     <button 
+             onClick={handleLogout}
+             className="logout-button"
+             title="Sair da área administrativa"
+           >
+             ↪ Sair
+           </button>
         </div>
       </header>
 

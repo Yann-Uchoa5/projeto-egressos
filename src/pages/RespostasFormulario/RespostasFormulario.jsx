@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import ifceLogo from '../../assets/ifce-logo.png';
 import './respostasFormulario.css';
 
 const RespostasFormulario = () => {
   const navigate = useNavigate();
+  const { logout } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   
   const [respostas, setRespostas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
+  // Função para fazer logout
+  const handleLogout = () => {
+    logout();
+  };
 
   useEffect(() => {
     const load = async () => {
@@ -58,6 +65,13 @@ const RespostasFormulario = () => {
             <span className="user-role">Coordenador</span>
           </div>
         </div>
+                 <button 
+           onClick={handleLogout}
+           className="logout-button"
+           title="Sair da área administrativa"
+         >
+           ↪ Sair
+         </button>
       </header>
 
       {/* Conteúdo principal */}

@@ -98,8 +98,8 @@
 /* Estilos para inputs com erro */
 .form-input.error,
 .form-select.error {
-  border-color: #ff4757;
-  box-shadow: 0 0 0 2px rgba(255, 71, 87, 0.15);
+  border-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(219, 24, 24, 0.475);
   background-color: #fff5f5;
   /* FORÇAR TAMANHO NORMAL - SEMPRE! */
   height: 40px !important;
