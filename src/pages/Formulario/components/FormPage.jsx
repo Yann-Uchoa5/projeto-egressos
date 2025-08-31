@@ -8,8 +8,8 @@ import AvaliacaoCurso from './pages/AvaliacaoCurso';
 import ExperienciaAcademica from './pages/ExperienciaAcademica';
 import Finalizacao from './pages/Finalizacao';
 
-const FormPage = ({ currentPage, formData, onInputChange }) => {
-  const props = { formData, onInputChange };
+const FormPage = ({ currentPage, formData, onInputChange, validationErrors }) => {
+  const props = { formData, onInputChange, validationErrors };
 
   switch (currentPage) {
     case 0:

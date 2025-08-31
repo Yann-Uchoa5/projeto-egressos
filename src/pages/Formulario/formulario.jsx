@@ -82,8 +82,44 @@ const Formulario = () => {
     aceitaUsoDados: false
   });
 
-  const { validateCurrentPage } = useFormValidation(formData, currentPage);
+  const [validationErrors, setValidationErrors] = useState({});
+  
+  const { validateCurrentPage } = useFormValidation(formData, currentPage, validationErrors);
   const { progress } = useFormProgress(formData, currentPage);
+
+
+
+  // Função para verificar se email/telefone já existem
+  const checkFieldsExist = async () => {
+    const errors = {};
+    
+    if (formData.email) {
+      try {
+        const response = await fetch(`http://localhost:8000/api/v1/check-email/${encodeURIComponent(formData.email)}`);
+        const data = await response.json();
+        if (data.exists) {
+          errors.email = 'Este email já está cadastrado, por favor escolha outro';
+        }
+      } catch (error) {
+        console.error('Erro ao verificar email:', error);
+      }
+    }
+    
+    if (formData.telefone) {
+      try {
+        const response = await fetch(`http://localhost:8000/api/v1/check-telefone/${encodeURIComponent(formData.telefone)}`);
+        const data = await response.json();
+        if (data.exists) {
+          errors.telefone = 'Este telefone já está cadastrado, por favor escolha outro';
+        }
+      } catch (error) {
+        console.error('Erro ao verificar telefone:', error);
+      }
+    }
+    
+    setValidationErrors(errors);
+    return Object.keys(errors).length > 0;
+  };
 
   const showModal = (title, message, type = 'info') => {
     setModalConfig({
@@ -111,7 +147,14 @@ const Formulario = () => {
     }));
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
+    // Verifica se email/telefone já existem
+    const hasExistingFields = await checkFieldsExist();
+    if (hasExistingFields) {
+      return; // Não avança, os avisos já aparecem abaixo dos campos
+    }
+
+    // Verifica se todos os campos obrigatórios estão preenchidos
     if (!validateCurrentPage()) {
       showModal(
         'Campos Obrigatórios',
@@ -193,6 +236,7 @@ const Formulario = () => {
               currentPage={currentPage}
               formData={formData}
               onInputChange={handleInputChange}
+              validationErrors={validationErrors}
             />
             
             <FormNavigation 

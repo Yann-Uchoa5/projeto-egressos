@@ -1,7 +1,11 @@
-export const useFormValidation = (formData, currentPage) => {
+export const useFormValidation = (formData, currentPage, validationErrors = {}) => {
   const validateCurrentPage = () => {
     switch (currentPage) {
       case 0: // Dados Pessoais
+        // Verifica se há erros de validação (email/telefone já existem)
+        const hasFieldErrors = validationErrors.email || validationErrors.telefone;
+        if (hasFieldErrors) return false;
+        
         return (
           formData.nomeCompleto?.trim() &&
           formData.email?.trim() &&

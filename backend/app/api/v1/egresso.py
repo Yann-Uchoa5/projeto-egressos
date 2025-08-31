@@ -34,6 +34,12 @@ def submit_form_egresso(payload: EgressoCreate, db: Session = Depends(get_db)):
     return egresso
 
 
+@router.get("/list-egressos")
+def get_all_egressos(db: Session = Depends(get_db)):
+    egressos = db.query(Egresso).all()
+    return egressos
+
+
 @router.get("/egressos/{egresso_id}", response_model=EgressoOut)
 def get_egresso(egresso_id: int, db: Session = Depends(get_db)):
     egresso = db.query(Egresso).get(egresso_id)

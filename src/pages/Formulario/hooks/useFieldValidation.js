@@ -2,6 +2,7 @@ import { useState, useCallback } from 'react';
 
 export const useFieldValidation = () => {
   const [validationErrors, setValidationErrors] = useState({});
+  const [isChecking, setIsChecking] = useState({});
 
   const checkEmailExists = useCallback(async (email) => {
     if (!email || email.length < 3) return false;
@@ -32,22 +33,36 @@ export const useFieldValidation = () => {
   const validateEmail = useCallback(async (email) => {
     if (!email) return;
     
+    console.log('Validando email:', email);
+    setIsChecking(prev => ({ ...prev, email: true }));
     const emailExists = await checkEmailExists(email);
-    setValidationErrors(prev => ({
-      ...prev,
+    setIsChecking(prev => ({ ...prev, email: false }));
+    
+    console.log('Email existe:', emailExists);
+    const newErrors = {
+      ...validationErrors,
       email: emailExists ? 'Este email já está cadastrado, por favor escolha outro' : null
-    }));
-  }, [checkEmailExists]);
+    };
+    console.log('Novos erros de validação:', newErrors);
+    setValidationErrors(newErrors);
+  }, [checkEmailExists, validationErrors]);
 
   const validateTelefone = useCallback(async (telefone) => {
     if (!telefone) return;
     
+    console.log('Validando telefone:', telefone);
+    setIsChecking(prev => ({ ...prev, telefone: true }));
     const telefoneExists = await checkTelefoneExists(telefone);
-    setValidationErrors(prev => ({
-      ...prev,
+    setIsChecking(prev => ({ ...prev, telefone: false }));
+    
+    console.log('Telefone existe:', telefoneExists);
+    const newErrors = {
+      ...validationErrors,
       telefone: telefoneExists ? 'Este telefone já está cadastrado, por favor escolha outro' : null
-    }));
-  }, [checkTelefoneExists]);
+    };
+    console.log('Novos erros de validação:', newErrors);
+    setValidationErrors(newErrors);
+  }, [checkTelefoneExists, validationErrors]);
 
   const clearValidationError = useCallback((field) => {
     setValidationErrors(prev => ({
@@ -62,6 +77,7 @@ export const useFieldValidation = () => {
 
   return {
     validationErrors,
+    isChecking,
     validateEmail,
     validateTelefone,
     clearValidationError,
