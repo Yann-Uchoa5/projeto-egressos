@@ -71,9 +71,9 @@ const Footer = () => {
           </div>
           
           <div className="footer-contact">
-            <h3 className="footer-title">Desenvolvedor</h3>
+            <h3 className="footer-title">Desenvolvedor:</h3>
             <p>Yan Uchôa</p>
-            <p>Contato: yanuchoa63@gmail.com</p>
+            <p>Contato: yan.uchoa63@ifce.edu.br</p>
           </div>
         </div>
       </div>
