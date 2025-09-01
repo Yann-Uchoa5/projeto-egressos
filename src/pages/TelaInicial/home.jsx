@@ -48,9 +48,9 @@ const Footer = () => {
         <div className="footer-column">
           <h3 className="footer-title">Links</h3>
           <ul className="footer-links">
-            <li><a href="#">Sobre o IFCE</a></li>
-            <li><a href="#">Contatos</a></li>
-            <li><a href="#">Central de atendimento</a></li>
+            <li><a href="https://ifce.edu.br/acesso-a-informacao/Institucional" target="_blank" rel="noopener noreferrer">Sobre o IFCE</a></li>
+            <li><a href="https://ifce.edu.br/boa-viagem/campus_boaviagem/contatos" target="_blank" rel="noopener noreferrer">Contatos</a></li>
+            <li><a href="https://suap.ifce.edu.br/centralservicos/chamado_externo_abrir/" target="_blank" rel="noopener noreferrer">Central de atendimento</a></li>
           </ul>
         </div>
         
