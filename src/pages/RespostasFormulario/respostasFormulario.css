@@ -109,6 +109,13 @@
   white-space: nowrap;
 }
 
+.filters-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex: 1;
+}
+
 .search-container {
   position: relative;
   flex: 1;
@@ -141,6 +148,52 @@
 
 .search-input::placeholder {
   color: #999;
+}
+
+/* Filtro de idade */
+.age-filter-container {
+  min-width: 180px;
+}
+
+.age-filter-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background-color: white;
+  cursor: pointer;
+  color: #333;
+}
+
+.age-filter-select:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.1);
+}
+
+.age-filter-select:hover {
+  border-color: #bbb;
+}
+
+/* Informações dos resultados */
+.results-info {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  border-radius: 6px;
+  border-left: 4px solid #4CAF50;
+}
+
+.results-info p {
+  margin: 0.25rem 0;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.results-info p:first-child {
+  font-weight: 600;
 }
 
 /* Tabela de respostas */
@@ -242,8 +295,18 @@
     padding: 0.5rem 0;
   }
   
+  .filters-container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+  
   .search-container {
     max-width: none;
+  }
+  
+  .age-filter-container {
+    min-width: auto;
   }
   
   .respostas-table th,

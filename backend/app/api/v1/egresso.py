@@ -11,8 +11,6 @@ router = APIRouter()
 
 @router.post("/formularios", response_model=EgressoOut)
 def submit_form_egresso(payload: EgressoCreate, db: Session = Depends(get_db)):
-    print(f"DEBUG: Recebido payload - nome: {payload.nome}, email: {payload.email}, telefone: {payload.telefone}")
-    
     egresso = Egresso(
         nome=payload.nome,
         email=payload.email,
@@ -27,7 +25,6 @@ def submit_form_egresso(payload: EgressoCreate, db: Session = Depends(get_db)):
         experiencia_academica=payload.experiencia_academica,
     )
     
-    print(f"DEBUG: Criando egresso com telefone: {egresso.telefone}")
     db.add(egresso)
     db.commit()
     db.refresh(egresso)

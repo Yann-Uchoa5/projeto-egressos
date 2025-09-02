@@ -19,7 +19,13 @@ def me(current_user: str = Depends(get_current_user)):
 def list_egressos(db: Session = Depends(get_db)):
     rows = db.query(Egresso).order_by(Egresso.id.desc()).all()
     return [
-        {"id": r.id, "nome": r.nome, "curso": r.curso, "email": r.email}
+        {
+            "id": r.id, 
+            "nome": r.nome, 
+            "curso": r.curso, 
+            "email": r.email,
+            "dados_pessoais": r.dados_pessoais or {}
+        }
         for r in rows
     ]
 
@@ -30,5 +36,4 @@ def admin_get_egresso(egresso_id: int, db: Session = Depends(get_db)):
     if not egresso:
         raise HTTPException(status_code=404, detail="Egresso não encontrado")
     return egresso
-
 
