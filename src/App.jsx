@@ -5,7 +5,7 @@ import Login from "./pages/Login/login";
 import TelaInicial from "./pages/TelaInicial/home";
 import Formulario from "./pages/Formulario/formulario";
 import RespostasFormulario from "./pages/RespostasFormulario/RespostasFormulario";
-import DetalhesEgresso from "./pages/DetalhesEgresso/detalhesegresso";
+import DetalhesEgresso from "./pages/DetalhesEgresso/DetalhesEgresso";
 
 import "./App.css";
 
