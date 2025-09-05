@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Login from "./pages/Login/Login";
+import Login from "./pages/Login/login";
 import TelaInicial from "./pages/TelaInicial/home";
 import Formulario from "./pages/Formulario/Formulario";
 import RespostasFormulario from "./pages/RespostasFormulario/RespostasFormulario";
