@@ -1,0 +1,24 @@
+sequenceDiagram
+  participant U as Usuário (Egresso)
+  participant F as Frontend (React)
+  participant A as API (FastAPI)
+  participant D as DB (SQLite/Postgres)
+
+  U->>F: Preenche formulário multi-etapas
+  F->>A: POST /api/v1/formularios (payload)
+  A->>D: INSERT egressos
+  D-->>A: OK
+  A-->>F: 201 + egresso
+
+  U->>F: Login coordenação (credenciais)
+  F->>A: POST /api/v1/auth/login
+  A-->>F: 200 + JWT
+
+  F->>A: GET /api/v1/admin/egressos (Bearer JWT)
+  A->>D: SELECT egressos
+  D-->>A: rows
+  A-->>F: 200 + lista
+
+
+
+

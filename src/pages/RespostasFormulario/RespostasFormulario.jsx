@@ -83,7 +83,7 @@ const RespostasFormulario = () => {
 
   return (
     <div className="respostas-container">
-      {/* Header verde com informações do coordenador */}
+      
       <header className="coordenador-header">
         <div className="coordenador-info">
           <div className="avatar">

@@ -1,0 +1,27 @@
+flowchart LR
+  subgraph Client["Browser (React/Vite)"]
+    UI[UI: Formulário, Login, Listas]
+  end
+
+  subgraph API["FastAPI (/api/v1)"]
+    R1["Egresso Service\n(formulários, consultas)"]
+    R2["Auth Service\n(OAuth2 Password → JWT)"]
+    R3["Admin API\n(rotas protegidas)"]
+  end
+
+  subgraph Data["Persistência"]
+    ORM["SQLAlchemy ORM"]
+    DB(("SQLite (dev)\nPostgres (prod)"))
+  end
+
+  UI -->|"HTTP + CORS"| API
+  R1 --> ORM
+  R3 --> ORM
+  ORM --> DB
+  UI -->|"POST /auth/login"| R2
+  R2 -->|"JWT (Bearer)"| UI
+  UI -->|"Bearer JWT"| R3
+
+
+
+

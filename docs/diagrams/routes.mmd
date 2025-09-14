@@ -1,0 +1,19 @@
+stateDiagram-v2
+  [*] --> Public
+  Public: Público
+  Public --> Submit: POST /formularios
+  Public --> CheckEmail: GET /check-email/{email}
+  Public --> CheckTelefone: GET /check-telefone/{telefone}
+  Public --> Auth: POST /auth/login
+
+  Auth --> Admin: JWT emitido
+  state Admin {
+    [*] --> Listar
+    Listar: GET /admin/egressos
+    Listar --> Detalhar
+    Detalhar: GET /admin/egressos/{id}
+  }
+
+
+
+
